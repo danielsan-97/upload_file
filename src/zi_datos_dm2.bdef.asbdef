@@ -1,0 +1,25 @@
+managed implementation in class zbp_i_datos_dm2 unique;
+strict ( 2 );
+
+with draft;
+define behavior for ZI_DATOS_DM2 //alias <alias_name>
+persistent table zdm_file_dm
+draft table zdm_dfile_dm
+lock master
+total etag last_change_at
+authorization master ( instance )
+etag master last_change_at
+{
+  create ( authorization : global );
+  update;
+  delete;
+  field ( readonly :update) id;
+
+  draft action Edit;
+  draft action Activate;
+  draft action Discard;
+  draft action  Resume;
+  draft determine action Prepare;
+
+  mapping for zdm_file_dm corresponding;
+}

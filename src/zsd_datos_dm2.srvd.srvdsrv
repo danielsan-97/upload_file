@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition Datos'
+define service ZSD_DATOS_DM2 {
+  expose ZC_DATOS_DM2 as Datos2;
+}

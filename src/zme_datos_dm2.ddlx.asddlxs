@@ -1,0 +1,47 @@
+@Metadata.layer: #CORE
+
+@UI.headerInfo:{
+    typeName: 'Atachment', 
+    typeNamePlural: 'Atachments',
+    title: { type: #STANDARD , value: 'filename'},
+    description: { type: #STANDARD, value: 'comments'}
+}
+
+annotate entity ZC_DATOS_DM2
+    with 
+{
+
+    @UI.facet: [{ 
+        id: 'id', 
+        purpose: #STANDARD, 
+        position: 10,
+        label: 'Detalles',
+        type: #IDENTIFICATION_REFERENCE}]
+    
+    @UI.lineItem: [{ position: 10, label: 'Id' }]
+    @UI.identification: [{ position: 10, label: 'Id' }]
+    id;
+    
+    @UI.lineItem: [{ position: 20, label: 'Comnetarios' }]
+    @UI.identification: [{ position: 20, label: 'Comentarios' }]
+    comments;
+    
+    @UI.lineItem: [{ position: 30, label: 'Atach' }]
+    @UI.identification: [{ position: 30, label: 'Attach' }]
+    attachment;
+    
+    
+    @UI.hidden: true
+    mymetype;
+     @UI.hidden: true
+    filename;
+     @UI.hidden: true
+     created_by;
+     @UI.hidden: true
+    created_at;
+     @UI.hidden: true
+    last_change_by;
+     @UI.hidden: true
+    last_change_at;
+    
+}
